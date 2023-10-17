@@ -19,7 +19,5 @@ const eqArrays = function (arr1, arr2) {
   return true;
 };
 
-assertArraysEqual([1, 2, 3], [1, 2]); // => should PASS
-assertArraysEqual([1, 2, 3], [1, 2, 3]);
-// assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
-// assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), true);
+assertArraysEqual([1, 2, 3], [1, 2]); // => should FAIL
+assertArraysEqual([1, 2, 3], [1, 2, 3]); // => should PASS
