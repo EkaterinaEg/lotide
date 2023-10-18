@@ -13,6 +13,9 @@ const bestTVShowsByGenre = {
 };
 
 const findKeyByValue = function(obj, value) {
+  if (!obj || Object.keys(obj).length === 0) {
+    return undefined;
+  }
   for (let key in obj) {
     if (obj[key] === value) {
       return key;
