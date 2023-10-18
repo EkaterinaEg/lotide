@@ -7,6 +7,9 @@ const assertArraysEqual = function(arr1, arr2) {
 };
 
 const eqArrays = function(arr1, arr2) {
+  if (arr1 === undefined || arr2 === undefined) {
+    return false; // If either array is undefined, they are not equal
+  }
   if (arr1.length !== arr2.length) {
     return false;
   }
@@ -38,5 +41,5 @@ const letterPositions = function(sentence) {
 const results = letterPositions("LHlL");
 
 assertArraysEqual(results["L"], [0, 3]); // => should PASSED
-assertArraysEqual(results["L"], [0, 3]); // => should PASSED
+assertArraysEqual(results["L"], [1]); // => should FAILED
 assertArraysEqual(results["l"], [2]); // => should PASSED
