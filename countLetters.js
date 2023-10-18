@@ -9,8 +9,8 @@ const assertEqual = function(actual, expected) {
 
 const countLetters = function(str) {
   const result = {};
-  const lowerCaseStr = str.toLowerCase();
-  for (let letter of lowerCaseStr) {
+
+  for (let letter of str) {
     if (letter !== " ") {
       if (result[letter] === undefined) {
         result[letter] = 1;
@@ -21,6 +21,10 @@ const countLetters = function(str) {
   }
   return result;
 };
+const results = countLetters("LHl");
 
-console.log(countLetters("LHL"));
-console.log(countLetters("lighthouse in the house"));
+assertEqual(results["l"], 1); //Passed
+assertEqual(results["S"], undefined); //Passed
+assertEqual(results["L"], 1); //Passed
+assertEqual(results["L"], 2); //Failed
+assertEqual(results[" "], undefined); //Passed
