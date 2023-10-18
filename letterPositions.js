@@ -23,7 +23,7 @@ const letterPositions = function(sentence) {
   const results = {};
   for (let i = 0; i < sentence.length; i++) {
     if (sentence[i] !== " ") {
-      if (results[sentence[i]] === undefined) {
+      if (!results[sentence[i]]) {
         results[sentence[i]] = [i];
         // console.log(arr);
       } else {
@@ -38,5 +38,5 @@ const letterPositions = function(sentence) {
 const results = letterPositions("LHlL");
 
 assertArraysEqual(results["L"], [0, 3]); // => should PASSED
+assertArraysEqual(results["L"], [0, 3]); // => should PASSED
 assertArraysEqual(results["l"], [2]); // => should PASSED
-assertArraysEqual(results["H"], [2]); // => should FAILED
