@@ -27,23 +27,24 @@ const middle = function(array) {
   } else if (array.length % 2 === 0) {
     return array.slice(middle - 1, middle + 1);
   } else {
-    return array.splice(middle, 1);
+    return array.slice(middle, middle + 1);
   }
 };
 
-console.log(middle([1])); // => []
-console.log(middle([1, 2])); // => []);
+// console.log(middle([1])); // => []
+// console.log(middle([1, 2])); // => []);
 
-console.log(middle([1, 2, 3])); // => [2]
-console.log(middle([1, 2, 3, 4, 5])); // => [3]);
-console.log(middle([1, 2, 3, 4, 5, 6, 7])); // => [4]);
+// console.log(middle([1, 2, 3])); // => [2]
+// console.log(middle([1, 2, 3, 4, 5])); // => [3]);
+// console.log(middle([1, 2, 3, 4, 5, 6, 7])); // => [4]);
 
-console.log(middle([1, 2, 3, 4])); // => [2, 3]
-console.log(middle([1, 2, 3, 4, 5, 6])); // => [3, 4]
-console.log(middle([1, 2, 3, 4, 5, 6, 7, 8])); // => [4, 5]
+// console.log(middle([1, 2, 3, 4])); // => [2, 3]
+// console.log(middle([1, 2, 3, 4, 5, 6])); // => [3, 4]
+// console.log(middle([1, 2, 3, 4, 5, 6, 7, 8])); // => [4, 5]
 
 assertArraysEqual(middle([1, 2, 3]), [1, 2]); // => should FAIL
 assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]); // => should PASS
 assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]); // => should PASS
 assertArraysEqual(middle([1]), []); // => should PASS
 assertArraysEqual(middle([1, 2]), []); // => should PASS
+assertArraysEqual(middle([1, 2, 3, 4, 5, 6, 7, 8]), [4, 5]); // => should PASS
