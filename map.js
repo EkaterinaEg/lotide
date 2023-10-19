@@ -10,8 +10,9 @@ const map = function(array, callback) {
 
 const results1 = map(words, word => word[0]);
 const results2 = map(words, word => word.length);
-console.log(results1);
-console.log(results2);
+
+const numbers = [1, 2, 3, 4];
+const results3 = map(numbers, num => num + 1);
 
 const assertArraysEqual = function(arr1, arr2) {
   if (eqArrays(arr1, arr2)) {
@@ -41,5 +42,6 @@ assertArraysEqual(results1, [ 'g', 'c', 't', 'm']); // => should FAIL
 assertArraysEqual(results2, [ 6, 7, 2, 5, 3 ]); // => should PASS
 assertArraysEqual(results2, [ 6, 0, 0, 5, 3 ]); // => should FAIL
 
-
+assertArraysEqual(results3, [2, 3, 4, 5]); // => should PASS
+assertArraysEqual(results3, [2, 3, 4, 0]); // => should FAIL
 
