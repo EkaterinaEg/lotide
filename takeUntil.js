@@ -42,6 +42,6 @@ const assertArraysEqual = function(arr1, arr2) {
 
 
 
-assertArraysEqual(takeUntil(data1, x => x < 0), [ 1, 2, 5, 7, 2 ]); // => should PASS
-assertArraysEqual(takeUntil(data1, x => x < 0), takeUntil(data2, x => x === ',')); // => should FAIL
-assertArraysEqual(takeUntil(data2, x => x === ','), [ "I've", 'been', 'to', 'Hollywood' ]); // => should PASS
+assertArraysEqual(results1, [ 1, 2, 5, 7, 2 ]); // => should PASS
+assertArraysEqual(results2, results1); // => should FAIL
+assertArraysEqual(results2, [ "I've", 'been', 'to', 'Hollywood' ]); // => should PASS
