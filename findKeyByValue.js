@@ -1,18 +1,18 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`😆😃😃Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`😢😢😢Assertion Failed: ${actual} !== ${expected}`);
+const assertEqual = function (actual, expected) {
+  if (actual !== expected) {
+    console.log(`🔴🔴🔴Assertion Failed: ${actual} !== ${expected}`);
+    return;
   }
+  console.log(`🟢🟢🟢Assertion Passed: ${actual} === ${expected}`);
 };
 
 const bestTVShowsByGenre = {
-  'sci_fi': "The Expanse",
+  sci_fi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
   drama: "The Wire",
 };
 
-const findKeyByValue = function(obj, value) {
+const findKeyByValue = function (obj, value) {
   if (!obj || Object.keys(obj).length === 0) {
     return undefined;
   }

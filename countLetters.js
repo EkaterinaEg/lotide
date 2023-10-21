@@ -1,23 +1,19 @@
 // FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`😆😃😃Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`😢😢😢Assertion Failed: ${actual} !== ${expected}`);
+const assertEqual = function (actual, expected) {
+  if (actual !== expected) {
+    console.log(`🔴🔴🔴Assertion Failed: ${actual} !== ${expected}`);
+    return;
   }
+  console.log(`🟢🟢🟢Assertion Passed: ${actual} === ${expected}`);
 };
 
-const countLetters = function(str) {
+const countLetters = function (str) {
   const result = {};
-
   for (let letter of str) {
-    if (letter !== " ") {
-      if (result[letter] === undefined) {
-        result[letter] = 1;
-      } else {
-        result[letter]++;
-      }
+    if (!result[letter]) {
+      result[letter] = 0;
     }
+    result[letter]++;
   }
   return result;
 };

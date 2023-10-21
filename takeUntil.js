@@ -1,9 +1,8 @@
-const takeUntil = function(array, callback) {
+const takeUntil = function (array, callback) {
   let result = [];
   for (let arr of array) {
     if (!callback(arr)) {
       result.push(arr);
-
     } else {
       break;
     }
@@ -12,14 +11,24 @@ const takeUntil = function(array, callback) {
 };
 
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
-const results1 = takeUntil(data1, x => x < 0);
+const results1 = takeUntil(data1, (x) => x < 0);
 console.log(results1);
 
-const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
-const results2 = takeUntil(data2, x => x === ',');
+const data2 = [
+  "I've",
+  "been",
+  "to",
+  "Hollywood",
+  ",",
+  "I've",
+  "been",
+  "to",
+  "Redwood",
+];
+const results2 = takeUntil(data2, (x) => x === ",");
 console.log(results2);
 
-const eqArrays = function(arr1, arr2) {
+const eqArrays = function (arr1, arr2) {
   if (arr1 === undefined || arr2 === undefined || arr1.length !== arr2.length) {
     return false;
   }
@@ -32,16 +41,14 @@ const eqArrays = function(arr1, arr2) {
 
   return true;
 };
-const assertArraysEqual = function(arr1, arr2) {
-  if (eqArrays(arr1, arr2)) {
-    console.log(`😆😃😃Assertion Passed: ${arr1} === ${arr2}`);
-  } else {
-    console.log(`😢😢😢Assertion Failed: ${arr1} !== ${arr2} `);
+const assertArraysEqual = function (arr1, arr2) {
+  if (!eqArrays(arr1, arr2)) {
+    console.log(`🔴🔴🔴Assertion Failed: ${arr1} !== ${arr2}`);
+    return;
   }
+  console.log(`🟢🟢🟢Assertion Passed: ${arr1} === ${arr2}`);
 };
 
-
-
-assertArraysEqual(results1, [ 1, 2, 5, 7, 2 ]); // => should PASS
+assertArraysEqual(results1, [1, 2, 5, 7, 2]); // => should PASS
 assertArraysEqual(results2, results1); // => should FAIL
-assertArraysEqual(results2, [ "I've", 'been', 'to', 'Hollywood' ]); // => should PASS
+assertArraysEqual(results2, ["I've", "been", "to", "Hollywood"]); // => should PASS

@@ -1,13 +1,13 @@
 // FUNCTION IMPLEMENTATION
-
-const assertEqual = function(head, expected) {
-  if (head === expected) {
-    console.log(`😆😃😃Assertion Passed: ${head} === ${expected}`);
-  } else {
-    console.log(`😢😢😢Assertion Failed: ${head} !== ${expected}`);
+const assertEqual = function (head, expected) {
+  if (head !== expected) {
+    console.log(`🔴🔴🔴Assertion Failed: ${head} !== ${expected}`);
+    return;
   }
+  console.log(`🟢🟢🟢Assertion Passed: ${head} === ${expected}`);
 };
-const head = function(arr) {
+
+const head = function (arr) {
   if (Array.isArray(arr) && arr.length) {
     return arr[0];
   } else {

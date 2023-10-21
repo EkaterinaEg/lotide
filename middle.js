@@ -1,12 +1,12 @@
-const assertArraysEqual = function(arr1, arr2) {
-  if (eqArrays(arr1, arr2)) {
-    console.log(`😆😃😃Assertion Passed: ${arr1} === ${arr2}`);
-  } else {
-    console.log(`😢😢😢Assertion Failed: ${arr1} !== ${arr2} `);
+const assertArraysEqual = function (arr1, arr2) {
+  if (!eqArrays(arr1, arr2)) {
+    console.log(`🔴🔴🔴Assertion Failed: ${arr1} !== ${arr2}`);
+    return;
   }
+  console.log(`🟢🟢🟢Assertion Passed: ${arr1} === ${arr2}`);
 };
 
-const eqArrays = function(arr1, arr2) {
+const eqArrays = function (arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false;
   }
@@ -19,7 +19,7 @@ const eqArrays = function(arr1, arr2) {
   return true;
 };
 
-const middle = function(array) {
+const middle = function (array) {
   let middle = Math.floor(array.length / 2);
   // console.log(middle);
   if (array.length <= 2) {

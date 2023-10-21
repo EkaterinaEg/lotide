@@ -1,12 +1,12 @@
-const assertArraysEqual = function(arr1, arr2) {
-  if (eqArrays(arr1, arr2)) {
-    console.log(`😆😃😃Assertion Passed: ${arr1} === ${arr2}`);
-  } else {
-    console.log(`😢😢😢Assertion Failed: ${arr1} !== ${arr2} `);
+const assertArraysEqual = function (arr1, arr2) {
+  if (!eqArrays(arr1, arr2)) {
+    console.log(`🔴🔴🔴Assertion Failed: ${arr1} !== ${arr2}`);
+    return;
   }
+  console.log(`🟢🟢🟢Assertion Passed: ${arr1} === ${arr2}`);
 };
 
-const eqArrays = function(arr1, arr2) {
+const eqArrays = function (arr1, arr2) {
   if (arr1 === undefined || arr2 === undefined) {
     return false; // If either array is undefined, they are not equal
   }
@@ -22,7 +22,7 @@ const eqArrays = function(arr1, arr2) {
   return true;
 };
 
-const letterPositions = function(sentence) {
+const letterPositions = function (sentence) {
   const results = {};
   for (let i = 0; i < sentence.length; i++) {
     if (sentence[i] !== " ") {

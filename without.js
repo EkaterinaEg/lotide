@@ -1,4 +1,4 @@
-const without = function(source, itemsToRemove) {
+const without = function (source, itemsToRemove) {
   const newArray = [];
   for (let i = 0; i < source.length; i++) {
     if (!itemsToRemove.includes(source[i])) {
@@ -8,15 +8,15 @@ const without = function(source, itemsToRemove) {
   return newArray;
 };
 
-const assertArraysEqual = function(arr1, arr2) {
-  if (eqArrays(arr1, arr2)) {
-    console.log(`😆😃😃Assertion Passed: ${arr1} === ${arr2}`);
-  } else {
-    console.log(`😢😢😢Assertion Failed: ${arr1} !== ${arr2} `);
+const assertArraysEqual = function (arr1, arr2) {
+  if (!eqArrays(arr1, arr2)) {
+    console.log(`🔴🔴🔴Assertion Failed: ${arr1} !== ${arr2}`);
+    return;
   }
+  console.log(`🟢🟢🟢Assertion Passed: ${arr1} === ${arr2}`);
 };
 
-const eqArrays = function(arr1, arr2) {
+const eqArrays = function (arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false;
   }
