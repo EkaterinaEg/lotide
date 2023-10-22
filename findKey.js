@@ -1,4 +1,4 @@
-const findKey = function (object, callback) {
+const findKey = function(object, callback) {
   for (const key in object) {
     const item = object[key];
     const value = callback(item);
@@ -32,7 +32,7 @@ const result1 = findKey(
   (x) => x.stars === 4
 );
 
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   if (actual !== expected) {
     console.log(`🔴🔴🔴Assertion Failed: ${actual} !== ${expected}`);
     return;

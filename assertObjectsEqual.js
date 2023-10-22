@@ -1,4 +1,4 @@
-const assertObjectsEqual = function (obj1, obj2) {
+const assertObjectsEqual = function(obj1, obj2) {
   const inspect = require("util").inspect; // <= add this line
 
   if (!eqObjects(obj1, obj2)) {
@@ -13,7 +13,7 @@ const assertObjectsEqual = function (obj1, obj2) {
   }
 };
 
-const eqArrays = function (arr1, arr2) {
+const eqArrays = function(arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false;
   }
@@ -26,7 +26,7 @@ const eqArrays = function (arr1, arr2) {
   return true;
 };
 
-const eqObjects = function (object1, object2) {
+const eqObjects = function(object1, object2) {
   if (Object.keys(object1).length !== Object.keys(object2).length) {
     return false;
   }

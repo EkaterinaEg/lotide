@@ -1,5 +1,5 @@
 // FUNCTION IMPLEMENTATION
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   if (actual !== expected) {
     console.log(`🔴🔴🔴Assertion Failed: ${actual} !== ${expected}`);
     return;
@@ -7,7 +7,7 @@ const assertEqual = function (actual, expected) {
   console.log(`🟢🟢🟢Assertion Passed: ${actual} === ${expected}`);
 };
 
-const countLetters = function (str) {
+const countLetters = function(str) {
   const result = {};
   for (let letter of str) {
     if (!result[letter]) {

@@ -1,4 +1,4 @@
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   if (actual !== expected) {
     console.log(`🔴🔴🔴Assertion Failed: ${actual} !== ${expected}`);
     return;
@@ -12,7 +12,7 @@ const bestTVShowsByGenre = {
   drama: "The Wire",
 };
 
-const findKeyByValue = function (obj, value) {
+const findKeyByValue = function(obj, value) {
   if (!obj || Object.keys(obj).length === 0) {
     return undefined;
   }

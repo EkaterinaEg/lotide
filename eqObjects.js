@@ -1,5 +1,5 @@
 // FUNCTION IMPLEMENTATION
-const eqArrays = function (arr1, arr2) {
+const eqArrays = function(arr1, arr2) {
   if (arr1 === undefined || arr2 === undefined || arr1.length !== arr2.length) {
     return false;
   }
@@ -13,7 +13,7 @@ const eqArrays = function (arr1, arr2) {
   return true;
 };
 
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   if (actual !== expected) {
     console.log(`🔴🔴🔴Assertion Failed: ${actual} !== ${expected}`);
     return;
@@ -21,7 +21,7 @@ const assertEqual = function (actual, expected) {
   console.log(`🟢🟢🟢Assertion Passed: ${actual} === ${expected}`);
 };
 
-const eqObjects = function (object1, object2) {
+const eqObjects = function(object1, object2) {
   if (Object.keys(object1).length !== Object.keys(object2).length) {
     return false;
   }
