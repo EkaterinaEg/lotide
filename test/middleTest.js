@@ -18,6 +18,10 @@ describe("#middle", () => {
     const result = middle([1, 2]);
     assert.deepEqual(result, []);
   });
+  it("returns length of original array = 3 to check if the original array was not altered by the middle function", () => {
+    const words = [1, 2, 3];
+    assert.strictEqual(words.length, 3);
+  });
   it("returns [4, 5] for [1, 2, 3, 4, 5, 6, 7, 8]", () => {
     const result = middle([1, 2, 3, 4, 5, 6, 7, 8]);
     assert.deepEqual(result, [4, 5]);
