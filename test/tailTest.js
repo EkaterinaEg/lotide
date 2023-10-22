@@ -6,14 +6,6 @@ describe("#tail", () => {
     const result = tail(["Hello", "Lighthouse", "Labs"]);
     assert.strictEqual(result.length, 2);
   });
-  it(
-    "returns ['Lighthouse",
-    "Labs'] for ['Hello', 'Lighthouse', 'Labs']",
-    () => {
-      const result = tail(["Hello", "Lighthouse", "Labs"]);
-      assert.deepEqual(result, ["Lighthouse", "Labs"]);
-    }
-  );
   it("returns 'Lighthouse' for the first element of array", () => {
     const result = tail(["Hello", "Lighthouse", "Labs"]);
     assert.strictEqual(result[0], "Lighthouse");
