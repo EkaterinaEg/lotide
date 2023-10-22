@@ -1,14 +1,29 @@
+const assert = require("chai").assert;
 const tail = require("../tail");
-const assertEqual = require("../assertEqual");
 
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result.length, 2); // ensure we get back two elements
-assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
-assertEqual(result[1], "Labs"); // ensure second element is "Labs"
-const emptyArray = tail([]);
-assertEqual(emptyArray.length, 0);
-const singleElementArray = tail(["Hello"]);
-assertEqual(singleElementArray.length, 0);
-const words = ["Hello", "Lighthouse", "Labs"];
-tail(words);
-assertEqual(words.length, 3);
+describe("#tail", () => {
+  it("returns 2 for the length of array", () => {
+    const result = tail(["Hello", "Lighthouse", "Labs"]);
+    assert.strictEqual(result.length, 2);
+  });
+  it(
+    "returns ['Lighthouse",
+    "Labs'] for ['Hello', 'Lighthouse', 'Labs']",
+    () => {
+      const result = tail(["Hello", "Lighthouse", "Labs"]);
+      assert.deepEqual(result, ["Lighthouse", "Labs"]);
+    }
+  );
+  it("returns 'Lighthouse' for the first element of array", () => {
+    const result = tail(["Hello", "Lighthouse", "Labs"]);
+    assert.strictEqual(result[0], "Lighthouse");
+  });
+  it("returns length = 0 for an empty array", () => {
+    const result = tail([]);
+    assert.strictEqual(result.length, 0);
+  });
+  it("returns [] for ['Hello']", () => {
+    const result = tail(["Hello"]);
+    assert.deepEqual(result, []);
+  });
+});
