@@ -20,6 +20,7 @@ module.exports = {
   head: head,
   tail: tail,
   middle: middle,
+  without: without,
   countLetters: countLetters,
   countOnly: countOnly,
   findKey: findKey,
@@ -27,7 +28,6 @@ module.exports = {
   letterPositions: letterPositions,
   map: map,
   takeUntil: takeUntil,
-  without: without,
 
   assertArraysEqual: assertArraysEqual,
   assertEqual: assertEqual,
